@@ -4,7 +4,7 @@ from rich.console import Console
 from rich.prompt import Prompt
 import datetime
 import random
-from coordinator import ResearchCoordinator
+from deep_coordinator import ResearchCoordinator
 
 load_dotenv()
 

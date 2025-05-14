@@ -6,11 +6,11 @@ from rich.panel import Panel
 from rich.markdown import Markdown
 
 from models import SearchResult
-from research_agents.follow_up_agent import FollowUpDecisionResponse
-from research_agents.follow_up_agent import follow_up_decision_agent
-from research_agents.search_agent import search_agent
-from research_agents.query_agent import QueryResponse, query_agent
-from research_agents.synthesis_agent import synthesis_agent
+from deep_follow_up_agent import FollowUpDecisionResponse
+from deep_follow_up_agent import follow_up_decision_agent
+from deep_search_agent import search_agent
+from deep_query_agent import QueryResponse, query_agent
+from deep_synthesis_agent import synthesis_agent
 
 console = Console()
 
@@ -49,11 +49,11 @@ class ResearchCoordinator:
 
             console.print("\n[bold green]✓ Research complete![/bold green]\n")
             console.print(Markdown(final_report))
-            with open("research_report.md", "w") as f:
-                f.write(final_report)
-            console.print(
-                "\n[bold green]✓ Report saved as research_report.md[/bold green]\n"
-            )
+            # with open("research_report.md", "w") as f:
+            #     f.write(final_report)
+            # console.print(
+            #     "\n[bold green]✓ Report saved as research_report.md[/bold green]\n"
+            # )
             return final_report
 
     async def generate_queries(self) -> QueryResponse:
